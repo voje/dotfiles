@@ -41,6 +41,9 @@ return require('packer').startup(function(use)
   -- dep: build and ins https://github.com/universal-ctags/ctags.git
   use "majutsushi/tagbar"
 
+  -- [[ Utils ]]
+  use "scrooloose/nerdtree"
+
   --[[ 
   -- Let's try not using mason (trouble pulling packages when at work - 
   -- firewall??)
