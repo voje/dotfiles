@@ -42,6 +42,34 @@ return require('packer').startup(function(use)
   -- :CocInstall coc-pyright
   -- cd ~/.local/share/nvim/site/pack/packer/start/coc.nvim && yarn install
 
+  -- [[ General-purpose ]]
+  -- https://jdhao.github.io/2018/09/28/nvim_tagbar_install_use/
+  -- dep: build and ins https://github.com/universal-ctags/ctags.git
+  use "majutsushi/tagbar"
+
+  -- [[ Utils ]]
+  use "scrooloose/nerdtree"
+  use "vim-airline/vim-airline"
+  use "vim-airline/vim-airline-themes"
+
+  --[[ 
+  -- Let's try not using mason (trouble pulling packages when at work - 
+  -- firewall??)
+  -- Rust (mason)
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use "neovim/nvim-lspconfig"
+
+  -- Setup mason
+  require("mason").setup {
+      providers = {
+          "mason.providers.client",
+          "mason.providers.registry-api",
+      }
+  }
+  ]]--
+
+
 -- Set up rust-tools
 -- This plugin automatically configures nvim-lspconfig
 local rt = require("rust-tools")
