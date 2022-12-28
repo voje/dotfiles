@@ -10,8 +10,12 @@ vim.g.mapleader = ","
 vim.g.localleader = "\\"
 
 -- IMPORTS
-require('vars')      -- Variables
-require('opts')      -- Options
+require('opts')      -- Options (spaces, ...)
 require('keys')      -- Keymaps
+require('vars')      -- Variables
 require('plugins')      -- Plugins
+
+-- Various languages
+require('languages.go')
+require('plugins.treesitter')
 

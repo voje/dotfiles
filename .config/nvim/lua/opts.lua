@@ -31,3 +31,7 @@ opt.tabstop = 2                  -- num:  Number of spaces tabs count for
 -- [[ Splits ]]
 opt.splitright = true            -- bool: Place new window to right of current one
 opt.splitbelow = true            -- bool: Place new window below the current one
+
+-- [[ Wrap long lines]]
+opt.wrap = true
+
