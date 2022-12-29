@@ -35,6 +35,22 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- [[ Golang ]]
+  use 'ray-x/go.nvim'
+  use 'ray-x/guihua.lua' -- recommanded if need floating window support
+
+  -- Auto-completion
+  --[[
+  use 'hrsh7th/nvim-cmp' 
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-vsnip'                             
+  use 'hrsh7th/cmp-path'                              
+  use 'hrsh7th/cmp-buffer'                            
+  use 'hrsh7th/vim-vsnip'                             
+  ]]--
+
 end)
 
 
@@ -47,17 +63,6 @@ end)
   -- System dependencies:
   --   * rust-analyzer
   use 'simrat39/rust-tools.nvim'
-
-  -- Rust auto-completion
-  -- Completion framework:
-  use 'hrsh7th/nvim-cmp' 
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-nvim-lua'
-  use 'hrsh7th/cmp-nvim-lsp-signature-help'
-  use 'hrsh7th/cmp-vsnip'                             
-  use 'hrsh7th/cmp-path'                              
-  use 'hrsh7th/cmp-buffer'                            
-  use 'hrsh7th/vim-vsnip'                             
 --]]
 
 --[[
