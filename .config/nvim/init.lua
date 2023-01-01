@@ -13,6 +13,9 @@ require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
 
+  use 'scrooloose/nerdtree'
+  use 'tribela/vim-transparent'
+
   use { -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     requires = {
@@ -123,8 +126,8 @@ vim.wo.signcolumn = 'yes'
 -- Set colorscheme
 -- vim.o.termguicolors = true
 vim.cmd [[colorscheme onedark]]
--- transparent BG
-vim.api.nvim_set_hl(0, "Normal", {guibg=NONE, ctermbg=NONE})
+-- transparent BG (try to achieve this with a plugin instead)
+-- vim.api.nvim_set_hl(0, "Normal", {guibg=None, ctermbg=None, ctermfg=None})
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
