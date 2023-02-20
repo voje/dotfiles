@@ -55,6 +55,6 @@ return require('packer').startup(function(use)
 		}
 	}
 
-	use 'parservim/nerdtree'
+    -- use 'parservim/nerdtree'
 
 end)
