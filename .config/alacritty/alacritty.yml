@@ -1,8 +1,8 @@
+---
 window:
   padding:
     x: 5
     y: 5
-  startup_mode: Maximized
   title: Alacritty
 
 scrolling:
@@ -10,4 +10,11 @@ scrolling:
 
 background_opacity: 0.95
 live_config_reload: true
+
+# Normal (roman) font face
+# Default:
+# - (Linux/BSD) monospace
+font:
+  normal:
+    family: Mononoki Nerd Font Complete
 
