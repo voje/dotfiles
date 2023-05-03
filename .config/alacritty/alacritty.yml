@@ -1,0 +1,13 @@
+window:
+  padding:
+    x: 5
+    y: 5
+  startup_mode: Maximized
+  title: Alacritty
+
+scrolling:
+  history: 5000
+
+background_opacity: 0.95
+live_config_reload: true
+
