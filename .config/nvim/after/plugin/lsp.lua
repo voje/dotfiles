@@ -8,11 +8,11 @@ local lsp = require('lsp-zero').preset({
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ansiblels
 lsp.ensure_installed({
 	'rust_analyzer',
-	'gopls',
     'pyright',
     'yamlls',
     'ansiblels',
 })
+    -- 'gopls',
 
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()

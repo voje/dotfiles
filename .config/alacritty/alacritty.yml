@@ -1,15 +1,14 @@
 ---
 window:
-  opacity: 0.70
   padding:
-    x: 10
-    y: 10
-  startup_mode: Maximized
+    x: 5
+    y: 5
   title: Alacritty
 
 scrolling:
   history: 5000
 
+background_opacity: 0.95
 live_config_reload: true
 
 # Normal (roman) font face
@@ -18,5 +17,7 @@ live_config_reload: true
 #font:
 #  normal:
 #    family: Mononoki Nerd Font Complete
-
+font:
+  normal:
+    family: Mononoki Nerd Font Complete
 
