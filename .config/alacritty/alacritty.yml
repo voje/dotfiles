@@ -1,5 +1,8 @@
 ---
 window:
+  dimensions:
+    columns: 150
+    lines: 40
   padding:
     x: 5
     y: 5
@@ -14,10 +17,7 @@ live_config_reload: true
 # Normal (roman) font face
 # Default:
 # - (Linux/BSD) monospace
-#font:
-#  normal:
-#    family: Mononoki Nerd Font Complete
-font:
-  normal:
-    family: Mononoki Nerd Font Complete
+# font:
+#   normal:
+#     family: Mononoki Nerd Font Complete
 
