@@ -7,6 +7,12 @@ return require('packer').startup(function(use)
 	-- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    --- Other one-liners
+	use 'nvim-treesitter/playground'
+    use 'towolf/vim-helm'
+	use 'tpope/vim-fugitive'
+    -- use 'parservim/nerdtree'
+
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -32,10 +38,6 @@ return require('packer').startup(function(use)
 		{run = ':TSUpdate'}
 	}
 
-	use 'nvim-treesitter/playground'
-
-	use 'tpope/vim-fugitive'
-
 	use {
 		'VonHeikemen/lsp-zero.nvim',
 		branch = 'v1.x',
@@ -58,8 +60,6 @@ return require('packer').startup(function(use)
 			{'rafamadriz/friendly-snippets'}, -- Optional
 		}
 	}
-
-    -- use 'parservim/nerdtree'
 
 end)
 
