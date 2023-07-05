@@ -1,5 +1,6 @@
 ---
 window:
+  opacity: 0.95
   dimensions:
     columns: 150
     lines: 40
@@ -11,7 +12,6 @@ window:
 scrolling:
   history: 5000
 
-background_opacity: 0.95
 live_config_reload: true
 
 # Normal (roman) font face

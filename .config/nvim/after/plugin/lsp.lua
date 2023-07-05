@@ -2,82 +2,23 @@ local lsp = require('lsp-zero').preset({
 	name = 'minimal',
 	set_lsp_keymaps = true,
 	manage_nvim_cmp = true,
-	suggest_lsp_servers = false,
+	suggest_lsp_servers = true,
 })
 
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#ansiblels
 lsp.ensure_installed({
     'bashls',
-    'helm_ls',
     'lua_ls',
-	'rust_analyzer',
     'pyright',
     'gopls',
 })
     -- 'yamlls',
     -- 'ansiblels',
+    -- 'helm_ls',
+	-- 'rust_analyzer',
 
 -- (Optional) Configure lua language server for neovim
 lsp.nvim_workspace()
 
 lsp.setup()
-
--- https://github.com/redhat-developer/yaml-language-server
-require('lspconfig')['yamlls'].setup {
-    settings = {
-        yaml = {
-            format = {
-                enable = true,
-            },
-            validate = true,
-            hover = true,
-            completion = true,
-            keyOrdering = false,
-            editor = {
-                tabSize = 2,
-            },
-        },
-    }
-}
-
--- https://als.readthedocs.io/settings/
-require('lspconfig')['ansiblels'].setup {
-    settings = {
-        ansible = {
-            validation = {
-                -- Without ansible-lint, uses 
-                -- --syntax-check
-                enabled = true,
-                lint = {
-                    -- Toggle usage of ansible-lint default value: true
-                    -- ansible-lint bugged with python 3.8
-                    enabled = false,
-                }
-            }
-        },
-    },
-}
-
---- helml-ls 
-
-local configs = require('lspconfig.configs')
-local lspconfig = require('lspconfig')
-local util = require('lspconfig.util')
-
-if not configs.helm_ls then
-  configs.helm_ls = {
-    default_config = {
-      cmd = {"helm_ls", "serve"},
-      filetypes = {'helm'},
-      root_dir = function(fname)
-        return util.root_pattern('Chart.yaml')(fname)
-      end,
-    },
-  }
-end
-
-lspconfig.helm_ls.setup {
-  filetypes = {"helm", "yaml"},
-  cmd = {"helm_ls", "serve"},
-}
 
