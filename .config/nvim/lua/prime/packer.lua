@@ -11,7 +11,17 @@ return require('packer').startup(function(use)
 	use 'nvim-treesitter/playground'
     use 'towolf/vim-helm'
 	use 'tpope/vim-fugitive'
-    -- use 'parservim/nerdtree'
+    use 'neovim/nvim-lspconfig'
+    use 'nvim-treesitter/nvim-treesitter'
+    use 'preservim/nerdtree'
+    use { "catppuccin/nvim", as = "catppuccin" }
+
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', -- optional
+        },
+    }
 
     use {
         'nvim-lualine/lualine.nvim',
@@ -23,15 +33,6 @@ return require('packer').startup(function(use)
         tag = '0.1.1',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-
-    use {
-        'rose-pine/neovim',
-        as = 'rose-pine',
-		config = function()
-			require("rose-pine").setup()
-			vim.cmd('colorscheme rose-pine')
-		end
-	}
 
 	use {
 		'nvim-treesitter/nvim-treesitter',
