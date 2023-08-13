@@ -14,3 +14,6 @@ vim.keymap.set('n', '<leader>df', vim.diagnostic.open_float, {})
 vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, {})
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, {})
 
+-- NERDTree
+vim.keymap.set('n', '<leader>nt', vim.cmd.NERDTreeToggle, {})
+vim.keymap.set('n', '<leader>nf', vim.cmd.NERDTreeFocus, {})

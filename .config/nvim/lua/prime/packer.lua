@@ -27,14 +27,10 @@ return require('packer').startup(function(use)
     use 'neovim/nvim-lspconfig'
     use 'nvim-treesitter/nvim-treesitter'
     use 'preservim/nerdtree'
-    use { "catppuccin/nvim", as = "catppuccin" }
+	use 'L3MON4D3/LuaSnip'
 
-    use {
-        'nvim-tree/nvim-tree.lua',
-        requires = {
-            'nvim-tree/nvim-web-devicons', -- optional
-        },
-    }
+    --- Color scheme
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use {
         'nvim-lualine/lualine.nvim',
