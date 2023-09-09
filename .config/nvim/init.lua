@@ -1,29 +1,6 @@
 -- init.lua
-
-
--- Options
-vim.g.mapleader = " "
-
-vim.g.loaded_ruby_provider = 0
-vim.g.loaded_perl_provider = 0
-
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = false
-
-vim.opt.number = true
-vim.opt.signcolumn = "yes"
-
--- Keybinds
-vim.keymap.set("n", "<leader>nt", vim.cmd.NERDTreeFocus)
-
--- LSP
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
-
-vim.keymap.set("n", "<leader>so", function()
-    vim.cmd.source("init.lua")
-end)
+require("options")
+require("keybinds")
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -40,7 +17,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
+--
 -- Configure plugins
+-- 
 require("catppuccin").setup { transparent_background = true }
 vim.cmd.colorscheme "catppuccin"
 
