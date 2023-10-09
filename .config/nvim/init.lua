@@ -74,6 +74,17 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- File explorer
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+    }
+  },
+
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -553,7 +564,7 @@ cmp.setup {
 -- a folder that looks like an Ansible project.
 local maybe_ansible = function(path)
     local res = vim.fs.find(
-        {"ansible.cfg"},
+        {"ansible.cfg", "galaxy.yml"},
         {
             upward = true,      -- go through parent dirs 
             stop = vim.loop.os_homedir(),
@@ -561,7 +572,7 @@ local maybe_ansible = function(path)
         }
     )
     if #res > 0 then
-        print("Found ansible.cfg, setting filetype=yaml.ansible")
+        print("Found ansible project, setting filetype=yaml.ansible")
         return "yaml.ansible"
     end
     return "yaml"
