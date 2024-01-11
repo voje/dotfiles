@@ -192,6 +192,7 @@ require('lazy').setup({
     'lukas-reineke/indent-blankline.nvim',
     -- Enable `lukas-reineke/indent-blankline.nvim`
     -- See `:help indent_blankline.txt`
+    version = "v2.20.8",
     opts = {
       char = '┊',
       show_trailing_blankline_indent = false,
@@ -479,14 +480,14 @@ end
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  pyright = {},
+  -- pyright = {},
   ansiblels = {},
   bashls = {},
   yamlls = {},
-  hls = { filetypes = { 'haskell', 'lhaskell', 'cabal' } },
+  -- hls = { filetypes = { 'haskell', 'lhaskell', 'cabal' } },
   -- rust_analyzer = {},
   -- tsserver = {},
-  html = { filetypes = { 'html', 'twig', 'hbs'} },
+  -- html = { filetypes = { 'html', 'twig', 'hbs'} },
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
