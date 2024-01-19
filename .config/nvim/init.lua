@@ -74,6 +74,14 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  -- install without yarn or npm
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+
   {
     "s1n7ax/nvim-window-picker",
     name = "window-picker",
@@ -130,6 +138,9 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
+
+  -- [[ Helm stuff ]]
+  'towolf/vim-helm',
 
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim',  opts = {} },
@@ -246,6 +257,17 @@ require('lazy').setup({
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
   -- { import = 'custom.plugins' },
 }, {})
+
+-- [[ Helm stuff ]]
+require('lspconfig').helm_ls.setup({
+  settings = {
+    ['helm-ls'] = {
+      yamlls = {
+        path = "yaml-language-server",
+      }
+    }
+  }
+})
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
