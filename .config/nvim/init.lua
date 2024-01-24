@@ -175,12 +175,33 @@ require('lazy').setup({
     },
   },
 
+  --[[ Theme ]]--
+  --[[
   {
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
     config = function()
       vim.cmd.colorscheme 'onedark'
+    end,
+  },
+  ]]--
+
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+
+    config = function()
+      require("catppuccin").setup({
+        flavor = "mocha",
+        background = {
+          light = "latte",
+          dark = "mocha",
+        },
+      })
+      -- setup must be called before loading
+      vim.cmd.colorscheme "catppuccin"
     end,
   },
 
@@ -315,6 +336,8 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
+-- Set background - influences theme (light/dark)
+vim.o.background = "light"
 
 -- [[ Basic Keymaps ]]
 

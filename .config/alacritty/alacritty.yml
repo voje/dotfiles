@@ -21,6 +21,6 @@ font:
   normal:
     family: Mononoki Nerd Font
 
-# Light theme for those bright mornings 
-# import:
-#  - ~/.config/alacritty/themes/themes/github_light.yaml
+      # Light theme for those bright mornings 
+import:
+  - ~/.config/alacritty/themes/themes/github_light.yaml
