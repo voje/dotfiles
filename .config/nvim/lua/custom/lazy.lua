@@ -83,27 +83,27 @@ require('lazy').setup({
     opts = {
       -- See `:help gitsigns.txt`
       signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
+	add = { text = '+' },
+	change = { text = '~' },
+	delete = { text = '_' },
+	topdelete = { text = '‾' },
+	changedelete = { text = '~' },
       },
       on_attach = function(bufnr)
-        vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
+	vim.keymap.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
 
-        -- don't override the built-in and fugitive keymaps
-        local gs = package.loaded.gitsigns
-        vim.keymap.set({ 'n', 'v' }, ']c', function()
-          if vim.wo.diff then return ']c' end
-          vim.schedule(function() gs.next_hunk() end)
-          return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
-        vim.keymap.set({ 'n', 'v' }, '[c', function()
-          if vim.wo.diff then return '[c' end
-          vim.schedule(function() gs.prev_hunk() end)
-          return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
+	-- don't override the built-in and fugitive keymaps
+	local gs = package.loaded.gitsigns
+	vim.keymap.set({ 'n', 'v' }, ']c', function()
+	  if vim.wo.diff then return ']c' end
+	  vim.schedule(function() gs.next_hunk() end)
+	  return '<Ignore>'
+	  end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
+	vim.keymap.set({ 'n', 'v' }, '[c', function()
+	  if vim.wo.diff then return '[c' end
+	  vim.schedule(function() gs.prev_hunk() end)
+	  return '<Ignore>'
+	  end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
       end,
     },
   },
@@ -116,11 +116,11 @@ require('lazy').setup({
 
     config = function()
       require("catppuccin").setup({
-        flavor = "mocha",
-        background = {
-          light = "latte",
-          dark = "mocha",
-        },
+	flavor = "mocha",
+	background = {
+	  light = "latte",
+	  dark = "mocha",
+	},
       })
       -- setup must be called before loading
       vim.cmd.colorscheme "catppuccin"
@@ -133,11 +133,11 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
-        path = 1,
+	icons_enabled = false,
+	theme = 'onedark',
+	component_separators = '|',
+	section_separators = '',
+	path = 1,
       },
     },
   },
@@ -167,13 +167,13 @@ require('lazy').setup({
       -- Only load if `make` is available. Make sure you have the system
       -- requirements installed.
       {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        -- NOTE: If you are having trouble with this installation,
-        --       refer to the README for telescope-fzf-native for more instructions.
-        build = 'make',
-        cond = function()
-          return vim.fn.executable 'make' == 1
-        end,
+	'nvim-telescope/telescope-fzf-native.nvim',
+	-- NOTE: If you are having trouble with this installation,
+	--       refer to the README for telescope-fzf-native for more instructions.
+	build = 'make',
+	cond = function()
+	  return vim.fn.executable 'make' == 1
+	end,
       },
     },
   },
@@ -187,18 +187,35 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  -- Neorg
   {
     "nvim-neorg/neorg",
-    -- run = ":Neorg sync-parsers", -- This is the important bit!
-    -- config = function()
+    build = ":Neorg sync-parsers",
+    -- tag = "*",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("neorg").setup {
-        load = {
-          ['core.defaults'] = {},
-          ['core.export'] = {},
-        },
+	load = {
+	  ["core.defaults"] = {}, -- Loads default behaviour
+	  ["core.concealer"] = {}, -- Adds pretty icons to your documents
+	  ["core.qol.toc"] = {
+	    config = {
+	      close_after_use = true
+	    },
+	  },
+	  ["core.esupports.metagen"] = {}, -- Generate file metadata
+	  ["core.summary"] = {}, -- Generates index
+	  ["core.dirman"] = { -- Manages Neorg workspaces
+	    config = {
+	      workspaces = {
+		notes = "~/neorg/notes",
+		kontron = "~/neorg/kontron",
+	      },
+	      default_workspace = "notes",
+	    },
+	  },
+	},
       }
-    end
-  }
-}, {})
+    end,
+  },
+
+}, {}) -- lazy.setup()
