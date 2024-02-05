@@ -196,7 +196,7 @@ require('lazy').setup({
       require("neorg").setup {
 	load = {
 	  ["core.defaults"] = {}, -- Loads default behaviour
-	  ["core.concealer"] = {}, -- Adds pretty icons to your documents
+	  ["core.concealer"] = {},
 	  ["core.qol.toc"] = {
 	    config = {
 	      close_after_use = true
