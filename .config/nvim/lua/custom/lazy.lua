@@ -202,8 +202,16 @@ require('lazy').setup({
 	      close_after_use = true
 	    },
 	  },
-	  ["core.esupports.metagen"] = {}, -- Generate file metadata
-	  ["core.summary"] = {}, -- Generates index
+	  ["core.esupports.metagen"] = {
+	    config = {
+	      type = "auto",
+	    },
+	  },
+	  ["core.summary"] = { -- Generate index
+	    config = {
+	      strategy = "by_path",
+	    },
+	  },
 	  ["core.dirman"] = { -- Manages Neorg workspaces
 	    config = {
 	      workspaces = {
