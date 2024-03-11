@@ -202,12 +202,16 @@ require('lazy').setup({
 	      close_after_use = true
 	    },
 	  },
-	  ["core.esupports.metagen"] = {}, -- Generate file metadata
-	  ["core.summary"] = {
+	  ["core.esupports.metagen"] = {
 	    config = {
-	      strategy = "by_path", 
+	      type = "auto",
 	    },
-	  }, -- Generates index
+	  },
+	  ["core.summary"] = { -- Generate index
+	    config = {
+	      strategy = "by_path",
+	    },
+	  },
 	  ["core.tempus"] = {}, -- Dates
 	  ["core.dirman"] = { -- Manages Neorg workspaces
 	    config = {

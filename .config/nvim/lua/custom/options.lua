@@ -44,7 +44,7 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 -- Set background - influences theme (light/dark)
-vim.o.background = "light"
+vim.o.background = "dark"
 
 -- Disable providers
 vim.g.loaded_ruby_provider = 0
