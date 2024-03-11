@@ -206,7 +206,7 @@ local servers = {
   ansiblels = {},
   bashls = {},
   yamlls = {},
-  hls = { filetypes = { 'haskell', 'lhaskell', 'cabal' } },
+  -- hls = { filetypes = { 'haskell', 'lhaskell', 'cabal' } },
   -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },

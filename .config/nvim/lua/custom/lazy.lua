@@ -203,14 +203,19 @@ require('lazy').setup({
 	    },
 	  },
 	  ["core.esupports.metagen"] = {}, -- Generate file metadata
-	  ["core.summary"] = {}, -- Generates index
+	  ["core.summary"] = {
+	    config = {
+	      strategy = "by_path", 
+	    },
+	  }, -- Generates index
+	  ["core.tempus"] = {}, -- Dates
 	  ["core.dirman"] = { -- Manages Neorg workspaces
 	    config = {
 	      workspaces = {
 		notes = "~/neorg/notes",
 		kontron = "~/neorg/kontron",
 	      },
-	      default_workspace = "notes",
+	      default_workspace = "kontron",
 	    },
 	  },
 	},
