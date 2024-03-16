@@ -2,6 +2,14 @@
 --- Load language specific plugings by sourcing plugins
 --- from ./languages/ in init.lua.
 
+local function getNeorgWs()
+  local ws = os.getenv("NEORG_WS")
+  if ws == "" then
+  	return "notes"
+  end
+  return ws
+end
+
 --- return the 'plugins' argument in lazy.setup(plugins, opts)
 require('lazy').setup({
   -- Git related plugins
@@ -209,7 +217,7 @@ require('lazy').setup({
 	  },
 	  ["core.summary"] = { -- Generate index
 	    config = {
-	      strategy = "by_path",
+	      strategy = "default",
 	    },
 	  },
 	  ["core.tempus"] = {}, -- Dates
@@ -219,7 +227,7 @@ require('lazy').setup({
 		notes = "~/neorg/notes",
 		kontron = "~/neorg/kontron",
 	      },
-	      default_workspace = "kontron",
+	      default_workspace = getNeorgWs(),
 	    },
 	  },
 	},

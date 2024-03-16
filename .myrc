@@ -1,0 +1,27 @@
+#
+# RC file to be invoked from either .bashrc or .zshrc
+#
+
+#
+# Aliases
+#
+alias vim='nvim'
+alias neorg='nvim -c ":cd ~/neorg/notes/ | Neorg index"'
+
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias k='kubectl'
+
+alias ap='ansible-playbook'
+
+alias tn='tmux new -s'
+alias ta='tmux attach -t'
+alias tl='tmux ls'
+
+alias fzd='cd $(find -type d | fzf)'
+
+#
+# Env variables
+#
+export EDITOR=/usr/bin/nvim
+export NEORG_WS="notes"
