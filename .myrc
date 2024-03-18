@@ -3,10 +3,16 @@
 #
 
 #
+# Env variables
+#
+export EDITOR=/usr/bin/nvim
+export NEORG_WS=${NEORG_WS:-notes}
+
+#
 # Aliases
 #
 alias vim='nvim'
-alias neorg='nvim -c ":cd ~/neorg/notes/ | Neorg index"'
+alias neorg='nvim -c ":cd ~/neorg/${NEORG_WS}/ | Neorg index"'
 
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
@@ -20,8 +26,3 @@ alias tl='tmux ls'
 
 alias fzd='cd $(find -type d | fzf)'
 
-#
-# Env variables
-#
-export EDITOR=/usr/bin/nvim
-export NEORG_WS="notes"
